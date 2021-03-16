@@ -6,19 +6,24 @@ import { AppComponent } from './app.component';
 import { FotosComponent } from './components/fotos/fotos.component';
 import { CargaComponent } from './components/carga/carga.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CargaImagenesService } from './services/carga-imagenes.service';
+
+//Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FotosComponent,
-    CargaComponent,
-    NavbarComponent
-  ],
+  declarations: [AppComponent, FotosComponent, CargaComponent, NavbarComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAnalyticsModule,
+    AngularFirestoreModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [CargaImagenesService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

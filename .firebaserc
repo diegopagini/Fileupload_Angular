@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fileupload-51ee0": {
+      "hosting": {
+        "fileupload": [
+          "fileupload-51ee0"
+        ]
+      }
+    }
+  }
+}

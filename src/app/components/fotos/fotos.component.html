@@ -1,1 +1,10 @@
-<p>fotos works!</p>
+<div class="row">
+  <div class="col" *ngFor="let item of items | async">
+    <div class="card h-100">
+      <img [src]="item.url" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name }}</h5>
+      </div>
+    </div>
+  </div>
+</div>

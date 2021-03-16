@@ -43,7 +43,7 @@ export class CargaImagenesService {
         .pipe(
           finalize(() =>
             fileRef.getDownloadURL().subscribe((url) => {
-              console.log('Imagen cargada con exito');
+              console.log('Imagen cargada con éxito');
               item.url = url;
               item.estaSubiendo = false;
               this.guardarImagen({

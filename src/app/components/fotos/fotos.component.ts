@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -12,12 +12,10 @@ export interface Item {
   templateUrl: './fotos.component.html',
   styleUrls: ['./fotos.component.css'],
 })
-export class FotosComponent implements OnInit {
+export class FotosComponent {
   items: Observable<any[]>;
 
   constructor(private firestore: AngularFirestore) {
-    this.items = firestore.collection('item').valueChanges();
+    this.items = firestore.collection('img').valueChanges();
   }
-
-  ngOnInit(): void {}
 }
